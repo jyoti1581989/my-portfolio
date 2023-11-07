@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Code Pro", monospace;
+  width: 100%;
+}
+
+.material-icons {
+  font-size: 2.5rem;
+}
+
+nav {
+  position: fixed;
+  background: #a99d90;
+  display: flex;
+  width: 100%;
+  width: 100vw;
+  flex-direction: column;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #865300;
+  z-index: 1;
+}
+
+nav .logo {
+  margin-left: 5px;
+  height: 35px;
+  width: 45px;
+  margin-top: 3px;
+  padding-bottom: 3px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #865300;
+  font-size: 1.5rem;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav #nav-menu {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+}
+
+nav #nav-menu :hover {
+  cursor: pointer;
+}
+
+nav .nav-list {
+  display: none;
+}
+
+nav .show {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background: #a99d90;
+  color: #865300;
+}
+
+header .portrait {
+  height: auto;
+  max-height: 300px;
+  max-width: 100%;
+  border-radius: 19px;
+}
+
+header a {
+  text-decoration: none;
+  color: #865300;
+}
+
+header .arrow-down {
+  font-size: 40px;
+  position: absolute;
+  bottom: 0;
+}
+
+header .arrow-down i {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background: #a99d90;
+  color: #EEF0F2;
+  height: auto;
+}
+
+.about h1 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: xx-large;
+}
+
+.about p {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 1200px;
+}
+
+.about h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.about .skills {
+  font-size: 3.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #865300;
+  background: #a99d90;
+}
+
+.portfolio h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: xx-large;
+}
+
+.portfolio .project-cards-container {
+  width: 90%;
+  display: block;
+}
+
+.project-card {
+  height: 480px;
+  width: 100%;
+  max-width: 360px;
+  background: #a99d90rent;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.project-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 15px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the project card container */
+.project-card:hover .project-card-inner,
+.project-card:focus .project-card-inner,
+.project-card:active .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.project-card-front {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.project-card-front img {
+  height: 90%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+}
+
+.project-card-front p {
+  background: #a99d90;
+  color: #011627;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.project-card-back {
+  height: 100%;
+  width: 100%;
+  background: #a99d90;
+  color: #011627;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+
+.project-card-back h3 {
+  font-size: 2rem;
+}
+
+.project-card-back p {
+  font-size: 1rem;
+}
+
+.project-card-back a {
+  color: #011627;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.contact {
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background: #a99d90;
+  color: #EEF0F2;
+}
+
+.contact h1 {
+  font-size: xx-large;
+}
+
+.contact .contact-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact .contact-form .input-container {
+  display: flex;
+  width: 100%;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  width: 80%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical;
+}
+
+input:valid {
+  border: 2px solid #011627;
+}
+
+.ficons {
+  margin-right: 6px;
+  margin-top: 6px;
+}
+
+#send-btn {
+  background-c#a99d9#865300;
+  color: #011627;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  box-shadow: 0 0 5px #FFB703, 0 0 10px #FFB703, 0 0 20px #FFB703;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #865300;
+  background: #a99d90;
+  color: #404040;
+}
+
+footer .social-links {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+footer .social-links a {
+  color: #404040;
+}
+
+footer p {
+  font-size: 0.75rem;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 960px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  nav .nav-list {
+    display: inline-block;
+    align-self: center;
+  }
+
+  nav #nav-menu {
+    display: none;
+  }
+
+  header {
+    flex-direction: row;
+  }
+
+  header .intro {
+    margin-left: 15px;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  header h3 {
+    font-size: 2rem;
+  }
+
+  header .portrait {
+    max-height: 50%;
+    max-width: 60%;
+    margin-right: 15px;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: #a99d90;
+    font-size: 1.5rem;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .about h1 {
+    margin-top: 20px;
+  }
+
+  .about h2 {
+    font-size: x-large;
+  }
+
+  .portfolio {
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: space-around;
+    padding-bottom: 3em;
+  }
+
+  .portfolio .project-cards-container {
+    width: 80%;
+    min-width: 750px;
+    max-width: 1080px;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 360px auto 360px;
+    grid-template-rows: min-content min-content min-content;
+  }
+
+  .portfolio .project-cards-container .p1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .portfolio .project-cards-container .p2 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+
+  .portfolio .project-cards-container .p3 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .portfolio .project-cards-container .p4 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+
+  .portfolio .project-cards-container .p5 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+
+  .portfolio .project-cards-container .p6 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+  }
+
+  .contact-form {
+    width: 75%;
+  }
+
+  .contact-form form {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .contact-form #send-btn {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
