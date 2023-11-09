@@ -79,13 +79,6 @@ header {
   color: #865300;
 }
 
-header .portrait {
-  height: auto;
-  max-height: 300px;
-  max-width: 100%;
-  border-radius: 19px;
-}
-
 header a {
   text-decoration: none;
   color: #865300;
@@ -174,7 +167,7 @@ header .arrow-down i {
   height: 480px;
   width: 100%;
   max-width: 360px;
-  background: #a99d90rent;
+  background: #a99d90;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -316,7 +309,7 @@ input:valid {
 }
 
 #send-btn {
-  background-c#a99d9#865300;
+  background: #865300;
   color: #011627;
   padding: 12px 20px;
   border: none;
@@ -389,22 +382,22 @@ footer p {
     font-size: 2rem;
   }
 
+
   header .portrait {
     max-height: 50%;
     max-width: 60%;
     margin-right: 15px;
+    border-radius: 19px;
   }
 
   .about {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
     background: #a99d90;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     height: auto;
-    min-height: 100vh;
   }
 
   .about h1 {
